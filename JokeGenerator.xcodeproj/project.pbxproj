@@ -11,6 +11,9 @@
 		159D59E82BADAC67002BDE08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D59E72BADAC67002BDE08 /* ContentView.swift */; };
 		159D59EA2BADAC68002BDE08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159D59E92BADAC68002BDE08 /* Assets.xcassets */; };
 		159D59ED2BADAC68002BDE08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159D59EC2BADAC68002BDE08 /* Preview Assets.xcassets */; };
+		159D59F52BADACB8002BDE08 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 159D59F42BADACB8002BDE08 /* GoogleGenerativeAI */; };
+		159D59FB2BADB4F4002BDE08 /* GeminiAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159D59FA2BADB4F4002BDE08 /* GeminiAI-Info.plist */; };
+		159D59FD2BADB644002BDE08 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D59FC2BADB644002BDE08 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		159D59E72BADAC67002BDE08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		159D59E92BADAC68002BDE08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		159D59EC2BADAC68002BDE08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		159D59FA2BADB4F4002BDE08 /* GeminiAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeminiAI-Info.plist"; sourceTree = "<group>"; };
+		159D59FC2BADB644002BDE08 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159D59F52BADACB8002BDE08 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,7 @@
 		159D59E42BADAC67002BDE08 /* JokeGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				159D59F62BADB418002BDE08 /* Config */,
 				159D59E52BADAC67002BDE08 /* JokeGeneratorApp.swift */,
 				159D59E72BADAC67002BDE08 /* ContentView.swift */,
 				159D59E92BADAC68002BDE08 /* Assets.xcassets */,
@@ -65,6 +72,15 @@
 				159D59EC2BADAC68002BDE08 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		159D59F62BADB418002BDE08 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				159D59FA2BADB4F4002BDE08 /* GeminiAI-Info.plist */,
+				159D59FC2BADB644002BDE08 /* APIKey.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,9 @@
 			dependencies = (
 			);
 			name = JokeGenerator;
+			packageProductDependencies = (
+				159D59F42BADACB8002BDE08 /* GoogleGenerativeAI */,
+			);
 			productName = JokeGenerator;
 			productReference = 159D59E22BADAC67002BDE08 /* JokeGenerator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 159D59D92BADAC67002BDE08;
+			packageReferences = (
+				159D59F32BADACB8002BDE08 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = 159D59E32BADAC67002BDE08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159D59FB2BADB4F4002BDE08 /* GeminiAI-Info.plist in Resources */,
 				159D59ED2BADAC68002BDE08 /* Preview Assets.xcassets in Resources */,
 				159D59EA2BADAC68002BDE08 /* Assets.xcassets in Resources */,
 			);
@@ -138,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				159D59E82BADAC67002BDE08 /* ContentView.swift in Sources */,
+				159D59FD2BADB644002BDE08 /* APIKey.swift in Sources */,
 				159D59E62BADAC67002BDE08 /* JokeGeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		159D59F32BADACB8002BDE08 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		159D59F42BADACB8002BDE08 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 159D59F32BADACB8002BDE08 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 159D59DA2BADAC67002BDE08 /* Project object */;
 }
